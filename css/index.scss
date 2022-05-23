@@ -1,0 +1,1151 @@
+@charset "utf-8";
+
+@import 'reset';
+@import 'variable';
+@import 'mixin';
+
+@include desktop {
+	html,
+	body {
+		width: 100%;
+		height: 100%;
+	}
+
+	main.mainContainer {
+		width: 100vw;
+		height: 100vh;
+		position: relative;
+		header.headerNavBarContainer {
+			width: 100%;
+			height: 10%;
+			@include flexRow();
+			visibility: hidden;
+			background-color: #929af3;
+			position: fixed;
+			opacity: 0;
+			top: 0;
+			left: 0;
+			transition: all 300ms;
+			z-index: 999;
+
+			.divLogoContainer {
+				width: 20%;
+				height: 100%;
+				@include flexRow();
+
+				i.iLogoIcon {
+					font-size: 2vw;
+					margin-right: 1vw;
+					color: $white;
+				}
+				i.iHamburgerIcon {
+					display: none;
+				}
+				.divLogo {
+					font-size: 2vw;
+					color: $white;
+					cursor: pointer;
+				}
+			}
+			nav.navContainer {
+				width: 80%;
+				height: 100%;
+				ul.ulContainer {
+					width: 100%;
+					height: 100%;
+					@include flexRow();
+					justify-content: flex-end;
+					li {
+						margin-right: 2vw;
+						.divPageMove {
+							padding: 0.5vw;
+							color: $white;
+							font-size: 1.2vw;
+							transition: all 300ms ease-in;
+							cursor: pointer;
+						}
+					}
+					li:hover .divPageMove {
+						background-color: $white;
+						color: #929af3;
+					}
+				}
+			}
+		}
+		section {
+			width: 100%;
+			height: 100%;
+			transition: all 300ms ease-in-out;
+			@include flexCol();
+		}
+		section.sectionHome {
+			justify-content: space-around;
+			background-image: url('../images/bg.jpg');
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			article.articleHomeContainer {
+				width: 40%;
+				height: 30%;
+				@include flexCol();
+				justify-content: space-between;
+				i.iLogoIcon {
+					width: 100%;
+					height: 20%;
+					@include flexCol();
+					color: $white;
+					font-size: 2vw;
+					animation: iSearch 1.5s linear infinite alternate;
+				}
+				@keyframes iSearch {
+					from {
+						transform: scale(1);
+					}
+
+					to {
+						transform: scale(2);
+					}
+				}
+				h1.h1HomeTitle {
+					line-height: 3vw;
+					font-size: 2.5vw;
+					color: $white;
+				}
+				h2.h2HomeDescription {
+					font-size: 1.8vw;
+					color: $white;
+				}
+			}
+			button.buttonAboutMeButton {
+				padding: 1vw;
+				border: 0.1vw solid $white;
+				border-radius: 1vw;
+				color: $white;
+				font-size: 1.5vw;
+				transition: all 300ms ease-in;
+			}
+			button.buttonAboutMeButton:hover {
+				background-color: $white;
+				color: #0265e7;
+			}
+		}
+		section.sectionAboutMe {
+			@include flexRow();
+			flex-wrap: wrap;
+			h1.h1Title {
+				// border: 1px solid red;
+				width: 100%;
+				height: 30%;
+				padding-top: 5%;
+				@include flexCol();
+				font-size: 3.5vw;
+			}
+			article.articleLeftContainer {
+				width: 30%;
+				height: 70%;
+				@include flexCol();
+				.divProfileContainer {
+					width: 20vw;
+					height: 20vw;
+					background-image: url('../images/profile.jpg');
+					background-position: center;
+					background-repeat: no-repeat;
+					background-size: contain;
+					border-radius: 50%;
+				}
+			}
+			article.articleRightContainer {
+				width: 70%;
+				height: 70%;
+				@include flexCol();
+				h2.h2Description {
+					// border: 1px solid red;
+					width: 80%;
+					height: 10%;
+					@include flexCol();
+					align-items: flex-start;
+					margin-bottom: 2vw;
+					font-size: 2vw;
+				}
+				ul.ulAboutMeContainer {
+					li {
+						line-height: 2vw;
+						margin-bottom: 1vw;
+						text-align: left;
+						font-size: 1.5vw;
+						list-style: disc;
+					}
+				}
+			}
+		}
+		section.sectionSkills {
+			@include flexRow();
+			background-color: #eee;
+			article.articleLeftContainer {
+				// border: 1px solid red;
+				width: 30%;
+				height: 100%;
+				@include flexCol();
+				.divClick {
+					height: 5%;
+					@include flexCol();
+					font-size: 2vw;
+					animation: clickLang 1s infinite ease-in alternate;
+				}
+				@keyframes clickLang {
+					from {
+						color: #aaa;
+					}
+					to {
+						color: #111;
+					}
+				}
+				ul.ulSkillsContainer {
+					// border: 1px solid green;
+					width: 20vw;
+					height: 20vw;
+					display: flex;
+					flex-wrap: wrap;
+					margin: 3vw 0;
+					li {
+						@include flexCol();
+						cursor: pointer;
+						img {
+							width: 6.6vw;
+							transition: all 300ms ease-in;
+						}
+					}
+					li:hover img {
+						transform: scale(1.2);
+					}
+				}
+				.divSkillDescription {
+					// border: 1px solid gold;
+					width: 80%;
+					height: 10%;
+					line-height: 1.5vw;
+					@include flexCol();
+					word-break: keep-all;
+				}
+			}
+			article.articleRightContainer {
+				// border: 1px solid blue;
+				width: 70%;
+				height: 100%;
+				@include flexCol();
+				h1.h1Title {
+					margin-bottom: 4vw;
+					font-size: 3.5vw;
+				}
+				ul.ulMainSkillsContainer {
+					margin-bottom: 2vw;
+					li {
+						line-height: 2vw;
+						margin-bottom: 1vw;
+						list-style: disc;
+						font-size: 1.5vw;
+						text-align: left;
+					}
+				}
+			}
+		}
+		section.sectionPortfolio {
+			@include flexCol();
+			h1.h1Title {
+				margin: 2vw 0;
+				font-size: 3.5vw;
+			}
+			article.articleSlideContainer {
+				width: 80%;
+				height: 70%;
+				@include flexRow();
+				i {
+					cursor: pointer;
+					font-size: 2vw;
+				}
+				nav.navSlideContainer {
+					width: 100%;
+					height: 100%;
+					ul.ulSlideContainer {
+						width: 100%;
+						height: 100%;
+						@include flexRow();
+						justify-content: space-around;
+						li {
+							width: 50%;
+							height: 90%;
+							@include flexCol();
+							justify-content: space-between;
+							border-radius: 1vw;
+							box-shadow: 0.3vw 0.3vw 0.3vw 0.3vw $lightGray;
+							overflow: hidden;
+							img.imgThumbnail {
+								width: 100%;
+								height: 60%;
+							}
+							.divPortfolioTitleContainer {
+								width: 100%;
+								height: 10%;
+								@include flexRow();
+								.divPortfolioTitle {
+									height: 100%;
+									@include flexCol();
+									margin-right: 1vw;
+									font-size: 1.5vw;
+								}
+								.divPersonNumber {
+									height: 100%;
+									@include flexCol();
+									font-size: 1.2vw;
+								}
+							}
+							.divDescription {
+								width: 100%;
+								height: 20%;
+								padding: 1vw;
+								word-break: keep-all;
+								line-height: 1.3vw;
+								@include flexCol();
+							}
+							.divButtonContainer {
+								width: 100%;
+								height: 10%;
+								margin-bottom: 0.5vw;
+								@include flexRow();
+								justify-content: space-around;
+								a.aGithub {
+									width: 50%;
+									height: 100%;
+									@include flexCol();
+									img {
+										// width: 100%;
+										height: 100%;
+									}
+								}
+								a.aUrl {
+									width: 50%;
+									height: 100%;
+									@include flexCol();
+								}
+								i.RightIcon {
+									width: 50%;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		footer.footerContactMeContainer {
+			width: 100%;
+			height: 40%;
+			padding-top: 1vw;
+			@include flexCol();
+			justify-content: space-between;
+			background-color: #555;
+			color: $white;
+			h1.h1Title {
+				height: 20%;
+				@include flexCol();
+				font-size: 3.5vw;
+			}
+			a {
+				height: 10%;
+				@include flexCol();
+				color: $white;
+				font-size: 1.5vw;
+			}
+
+			a.aGithub {
+				height: 15%;
+				img {
+					height: 100%;
+				}
+			}
+			.divFooter {
+				height: 15%;
+				margin-bottom: 0.8vw;
+				@include flexCol();
+				font-size: 1vw;
+			}
+		}
+	}
+}
+@include tablet {
+	html,
+	body {
+		width: 100%;
+		height: 100%;
+	}
+
+	main.mainContainer {
+		width: 100vw;
+		height: 100vh;
+		position: relative;
+		header.headerNavBarContainer {
+			width: 100%;
+			height: 10%;
+			@include flexCol();
+			visibility: hidden;
+			background-color: #929af3;
+			position: fixed;
+			opacity: 0;
+			top: 0;
+			left: 0;
+			transition: all 300ms;
+			z-index: 999;
+
+			.divLogoContainer {
+				width: 100%;
+				height: 100%;
+				//
+				@include flexRow();
+				position: relative;
+				i.iLogoIcon {
+					font-size: 5vw;
+					margin-right: 1vw;
+					color: $white;
+				}
+				.divLogo {
+					font-size: 5vw;
+					color: $white;
+					cursor: pointer;
+				}
+				i.iHamburgerIcon {
+					// border: 1px solid green;
+					position: absolute;
+					top: 50%;
+					right: 2%;
+					transform: translateY(-50%);
+					color: $white;
+					font-size: 5vw;
+					cursor: pointer;
+				}
+			}
+			.divLogoContainer.active {
+				height: 20%;
+			}
+			nav.navContainer {
+				display: none;
+				width: 100%;
+				height: 80%;
+				ul.ulContainer {
+					width: 100%;
+					height: 100%;
+					@include flexCol();
+					justify-content: space-around;
+					li {
+						width: 100%;
+						.divPageMove {
+							padding: 0.5vw;
+							color: $white;
+							font-size: 3vw;
+							transition: all 300ms ease-in;
+							cursor: pointer;
+						}
+					}
+					li:hover .divPageMove {
+						background-color: $white;
+						color: #929af3;
+					}
+				}
+			}
+			nav.navContainer.active {
+				display: block;
+			}
+		}
+		header.headerNavBarContainer.active {
+			height: 50vw;
+		}
+		section {
+			width: 100%;
+			height: 100%;
+			transition: all 300ms ease-in-out;
+			@include flexCol();
+		}
+		section.sectionHome {
+			justify-content: space-around;
+			background-image: url('../images/bg.jpg');
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			article.articleHomeContainer {
+				width: 40%;
+				height: 30%;
+				@include flexCol();
+				justify-content: space-between;
+				i.iLogoIcon {
+					width: 100%;
+					height: 20%;
+					@include flexCol();
+					color: $white;
+					font-size: 5vw;
+					animation: iSearch 1.5s linear infinite alternate;
+				}
+				@keyframes iSearch {
+					from {
+						transform: scale(1);
+					}
+
+					to {
+						transform: scale(2);
+					}
+				}
+				h1.h1HomeTitle {
+					line-height: 5vw;
+					font-size: 3.5vw;
+					color: $white;
+				}
+				h2.h2HomeDescription {
+					font-size: 3vw;
+					color: $white;
+				}
+			}
+			button.buttonAboutMeButton {
+				padding: 2vw;
+				border: 0.1vw solid $white;
+				border-radius: 1vw;
+				color: $white;
+				font-size: 5vw;
+				transition: all 300ms ease-in;
+			}
+			button.buttonAboutMeButton:hover {
+				background-color: $white;
+				color: #0265e7;
+			}
+		}
+		section.sectionAboutMe {
+			@include flexCol();
+			// flex-wrap: wrap;
+			h1.h1Title {
+				// border: 1px solid red;
+				width: 100%;
+				height: 10%;
+				margin-top: 15%;
+				@include flexCol();
+				font-size: 6vw;
+			}
+			article.articleLeftContainer {
+				// border: 1px solid blue;
+				width: 100%;
+				height: 65%;
+				@include flexCol();
+				.divProfileContainer {
+					width: 30vw;
+					height: 30vw;
+					background-image: url('../images/profile.jpg');
+					background-position: center;
+					background-repeat: no-repeat;
+					background-size: contain;
+					border-radius: 50%;
+				}
+			}
+			article.articleRightContainer {
+				// border: 1px solid green;
+				width: 100%;
+				height: 70%;
+				@include flexCol();
+				h2.h2Description {
+					margin-bottom: 3vw;
+					font-size: 3.5vw;
+				}
+				ul.ulAboutMeContainer {
+					li {
+						line-height: 3vw;
+						margin-bottom: 1vw;
+						text-align: left;
+						font-size: 2.4vw;
+						list-style: disc;
+					}
+				}
+			}
+		}
+		section.sectionSkills {
+			@include flexCol();
+			background-color: #eee;
+			article.articleLeftContainer {
+				// border: 1px solid red;
+				width: 100%;
+				height: 50%;
+				@include flexCol();
+				order: 1;
+				.divClick {
+					height: 5%;
+					@include flexCol();
+					font-size: 3.5vw;
+					animation: clickLang 1s infinite ease-in alternate;
+				}
+				@keyframes clickLang {
+					from {
+						color: #aaa;
+					}
+					to {
+						color: #111;
+					}
+				}
+				ul.ulSkillsContainer {
+					// border: 1px solid green;
+					width: 40vw;
+					height: 40vw;
+					display: flex;
+					flex-wrap: wrap;
+					margin: 3vw 0;
+					li {
+						@include flexCol();
+						cursor: pointer;
+						img {
+							width: 13.2vw;
+							transition: all 300ms ease-in;
+						}
+					}
+					li:hover img {
+						transform: scale(1.2);
+					}
+				}
+				.divSkillDescription {
+					// border: 1px solid gold;
+					width: 80%;
+					height: 10%;
+					@include flexCol();
+					line-height: 3.5vw;
+					word-break: keep-all;
+					font-size: 3vw;
+				}
+			}
+			article.articleRightContainer {
+				// border: 1px solid blue;
+				width: 100%;
+				height: 40%;
+				margin-top: 10%;
+				@include flexCol();
+				h1.h1Title {
+					margin-bottom: 4vw;
+					font-size: 5vw;
+				}
+				ul.ulMainSkillsContainer {
+					width: 80%;
+					word-break: keep-all;
+					margin-bottom: 2vw;
+					li {
+						line-height: 3vw;
+						margin-bottom: 1vw;
+						list-style: disc;
+						font-size: 2.5vw;
+						text-align: left;
+					}
+				}
+			}
+		}
+		section.sectionPortfolio {
+			@include flexCol();
+			h1.h1Title {
+				margin: 2vw 0;
+				font-size: 5vw;
+			}
+			article.articleSlideContainer {
+				width: 80%;
+				height: 70%;
+				@include flexRow();
+				i {
+					cursor: pointer;
+					font-size: 5vw;
+				}
+				nav.navSlideContainer {
+					width: 100%;
+					height: 100%;
+					ul.ulSlideContainer {
+						width: 100%;
+						height: 100%;
+						@include flexRow();
+						justify-content: space-around;
+						li {
+							width: 80%;
+							height: 90%;
+							@include flexCol();
+							justify-content: space-between;
+							border-radius: 1vw;
+							box-shadow: 0.3vw 0.3vw 0.3vw 0.3vw $lightGray;
+							overflow: hidden;
+							img.imgThumbnail {
+								width: 100%;
+								height: 60%;
+							}
+							.divPortfolioTitleContainer {
+								width: 100%;
+								height: 10%;
+								@include flexRow();
+								.divPortfolioTitle {
+									height: 100%;
+									@include flexCol();
+									margin-right: 1vw;
+									font-size: 2.5vw;
+								}
+								.divPersonNumber {
+									height: 100%;
+									@include flexCol();
+									font-size: 1.2vw;
+								}
+							}
+							.divDescription {
+								width: 100%;
+								height: 20%;
+								padding: 1vw;
+								word-break: keep-all;
+								line-height: 2.3vw;
+								@include flexCol();
+								font-size: 2.2vw;
+							}
+							.divButtonContainer {
+								width: 100%;
+								height: 10%;
+								margin-bottom: 0.5vw;
+								@include flexRow();
+								justify-content: space-around;
+								a.aGithub {
+									width: 50%;
+									height: 100%;
+									@include flexCol();
+									img {
+										// width: 100%;
+										height: 100%;
+									}
+								}
+								a.aUrl {
+									width: 50%;
+									height: 100%;
+									@include flexCol();
+								}
+								i.RightIcon {
+									width: 50%;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		footer.footerContactMeContainer {
+			width: 100%;
+			height: 40%;
+			padding-top: 1vw;
+			@include flexCol();
+			justify-content: space-between;
+			background-color: #555;
+			color: $white;
+			h1.h1Title {
+				height: 20%;
+				@include flexCol();
+				font-size: 5vw;
+			}
+			a {
+				height: 10%;
+				@include flexCol();
+				color: $white;
+				font-size: 3vw;
+			}
+
+			a.aGithub {
+				height: 15%;
+				img {
+					height: 100%;
+				}
+			}
+			.divFooter {
+				height: 20%;
+				@include flexCol();
+				font-size: 2vw;
+			}
+		}
+	}
+}
+@include mobile {
+	html,
+	body {
+		width: 100%;
+		height: 100%;
+	}
+
+	main.mainContainer {
+		width: 100vw;
+		height: 100vh;
+		position: relative;
+		header.headerNavBarContainer {
+			width: 100%;
+			height: 10%;
+			@include flexCol();
+			visibility: hidden;
+			background-color: #929af3;
+			position: fixed;
+			opacity: 0;
+			top: 0;
+			left: 0;
+			transition: all 300ms;
+			z-index: 999;
+
+			.divLogoContainer {
+				// border: 1px solid blue;
+				width: 100%;
+				height: 100%;
+				//
+				@include flexRow();
+				position: relative;
+				i.iLogoIcon {
+					font-size: 5.5vw;
+					margin-right: 1vw;
+					color: $white;
+				}
+				.divLogo {
+					font-size: 6vw;
+					color: $white;
+					cursor: pointer;
+				}
+				i.iHamburgerIcon {
+					// border: 1px solid green;
+					position: absolute;
+					top: 50%;
+					right: 2%;
+					transform: translateY(-50%);
+					color: $white;
+					font-size: 5vw;
+					cursor: pointer;
+				}
+			}
+			.divLogoContainer.active {
+				height: 20%;
+			}
+			nav.navContainer {
+				display: none;
+				width: 100%;
+				height: 80%;
+				ul.ulContainer {
+					width: 100%;
+					height: 100%;
+					@include flexCol();
+					justify-content: space-around;
+					li {
+						width: 100%;
+						.divPageMove {
+							padding: 0.5vw;
+							color: $white;
+							font-size: 4vw;
+							transition: all 300ms ease-in;
+							cursor: pointer;
+						}
+					}
+					li:hover .divPageMove {
+						background-color: $white;
+						color: #929af3;
+					}
+				}
+			}
+			nav.navContainer.active {
+				display: block;
+			}
+		}
+		header.headerNavBarContainer.active {
+			height: 50vw;
+		}
+		section {
+			width: 100%;
+			height: 100%;
+			transition: all 300ms ease-in-out;
+			@include flexCol();
+		}
+		section.sectionHome {
+			justify-content: space-around;
+			background-image: url('../images/bg.jpg');
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			article.articleHomeContainer {
+				width: 40%;
+				height: 30%;
+				@include flexCol();
+				justify-content: space-between;
+				i.iLogoIcon {
+					width: 100%;
+					height: 20%;
+					@include flexCol();
+					color: $white;
+					font-size: 10vw;
+					animation: iSearch 1.5s linear infinite alternate;
+				}
+				@keyframes iSearch {
+					from {
+						transform: scale(1);
+					}
+
+					to {
+						transform: scale(2);
+					}
+				}
+				h1.h1HomeTitle {
+					line-height: 6vw;
+					font-size: 5vw;
+					color: $white;
+					word-break: keep-all;
+				}
+				h2.h2HomeDescription {
+					word-break: keep-all;
+					line-height: 4.5vw;
+					font-size: 4vw;
+					color: $white;
+				}
+			}
+			button.buttonAboutMeButton {
+				padding: 2.5vw;
+				border: 0.1vw solid $white;
+				border-radius: 1vw;
+				color: $white;
+				font-size: 8vw;
+				transition: all 300ms ease-in;
+			}
+			button.buttonAboutMeButton:hover {
+				background-color: $white;
+				color: #0265e7;
+			}
+		}
+		section.sectionAboutMe {
+			@include flexCol();
+			// flex-wrap: wrap;
+			h1.h1Title {
+				width: 100%;
+				height: 20%;
+				margin-top: 10%;
+				@include flexCol();
+				font-size: 5.5vw;
+			}
+			article.articleLeftContainer {
+				width: 100%;
+				height: 30%;
+				@include flexCol();
+				.divProfileContainer {
+					width: 40vw;
+					height: 40vw;
+					background-image: url('../images/profile.jpg');
+					background-position: center;
+					background-repeat: no-repeat;
+					background-size: contain;
+					border-radius: 50%;
+				}
+			}
+			article.articleRightContainer {
+				width: 80%;
+				height: 50%;
+				@include flexCol();
+				h2.h2Description {
+					margin-bottom: 2vw;
+					font-size: 4.8vw;
+					word-break: keep-all;
+					text-align: left;
+					line-height: 5.5vw;
+				}
+				ul.ulAboutMeContainer {
+					li {
+						line-height: 5vw;
+						margin-bottom: 1vw;
+						text-align: left;
+						font-size: 4vw;
+						list-style: disc;
+					}
+				}
+			}
+		}
+		section.sectionSkills {
+			@include flexCol();
+			background-color: #eee;
+			article.articleLeftContainer {
+				// border: 1px solid red;
+				width: 100%;
+				height: 50%;
+				@include flexCol();
+				order: 1;
+				.divClick {
+					height: 5%;
+					@include flexCol();
+					font-size: 5vw;
+					animation: clickLang 1s infinite ease-in alternate;
+				}
+				@keyframes clickLang {
+					from {
+						color: #aaa;
+					}
+					to {
+						color: #111;
+					}
+				}
+				ul.ulSkillsContainer {
+					// border: 1px solid green;
+					width: 50vw;
+					height: 50vw;
+					display: flex;
+					flex-wrap: wrap;
+					margin: 3vw 0;
+					li {
+						@include flexCol();
+						cursor: pointer;
+						img {
+							width: 16vw;
+							transition: all 300ms ease-in;
+						}
+					}
+					li:hover img {
+						transform: scale(1.2);
+					}
+				}
+				.divSkillDescription {
+					// border: 1px solid gold;
+					width: 80%;
+					height: 10%;
+					@include flexCol();
+					line-height: 6vw;
+					word-break: keep-all;
+					font-size: 5vw;
+				}
+			}
+			article.articleRightContainer {
+				// border: 1px solid blue;
+				width: 80%;
+				height: 40%;
+				margin-top: 10%;
+				@include flexCol();
+				h1.h1Title {
+					margin-bottom: 4vw;
+					font-size: 6vw;
+				}
+				ul.ulMainSkillsContainer {
+					margin-bottom: 2vw;
+					li {
+						line-height: 4vw;
+						margin-bottom: 1vw;
+						list-style: disc;
+						font-size: 3vw;
+						text-align: left;
+						word-break: keep-all;
+					}
+				}
+			}
+		}
+		section.sectionPortfolio {
+			@include flexCol();
+			h1.h1Title {
+				margin: 2vw 0;
+				font-size: 7vw;
+			}
+			article.articleSlideContainer {
+				width: 80%;
+				height: 70%;
+				@include flexRow();
+				i {
+					cursor: pointer;
+					font-size: 8vw;
+				}
+				nav.navSlideContainer {
+					width: 100%;
+					height: 100%;
+					ul.ulSlideContainer {
+						width: 100%;
+						height: 100%;
+						@include flexRow();
+						justify-content: space-around;
+						li {
+							width: 90%;
+							height: 90%;
+							@include flexCol();
+							justify-content: space-between;
+							border-radius: 1vw;
+							box-shadow: 0.3vw 0.3vw 0.3vw 0.3vw $lightGray;
+							overflow: hidden;
+							img.imgThumbnail {
+								width: 100%;
+								height: 60%;
+							}
+							.divPortfolioTitleContainer {
+								width: 100%;
+								height: 10%;
+								@include flexRow();
+								.divPortfolioTitle {
+									height: 100%;
+									@include flexCol();
+									margin-right: 4vw;
+									font-size: 3.5vw;
+								}
+								.divPersonNumber {
+									height: 100%;
+									@include flexCol();
+									font-size: 3.5vw;
+								}
+							}
+							.divDescription {
+								width: 80%;
+								height: 20%;
+								padding: 1vw;
+								word-break: keep-all;
+								line-height: 4vw;
+								@include flexCol();
+								font-size: 3vw;
+							}
+							.divButtonContainer {
+								width: 100%;
+								height: 10%;
+								margin-bottom: 0.5vw;
+								@include flexRow();
+								justify-content: space-around;
+								a.aGithub {
+									width: 50%;
+									height: 80%;
+									@include flexCol();
+									img {
+										// width: 100%;
+										height: 100%;
+									}
+								}
+								a.aUrl {
+									width: 50%;
+									height: 80%;
+									@include flexCol();
+								}
+								i.RightIcon {
+									width: 50%;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		footer.footerContactMeContainer {
+			width: 100%;
+			height: 40%;
+			padding-top: 1vw;
+			@include flexCol();
+			justify-content: space-between;
+			background-color: #555;
+			color: $white;
+			h1.h1Title {
+				height: 20%;
+				@include flexCol();
+				margin-top: 3vw;
+				font-size: 7vw;
+			}
+			a {
+				height: 10%;
+				@include flexCol();
+				color: $white;
+				font-size: 5vw;
+			}
+
+			a.aGithub {
+				height: 15%;
+				img {
+					height: 100%;
+				}
+			}
+			.divFooter {
+				height: 20%;
+				@include flexCol();
+				font-size: 2vw;
+			}
+		}
+	}
+}

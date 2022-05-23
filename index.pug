@@ -1,0 +1,134 @@
+doctype html
+html(lang="ko")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Blog
+
+    // Favicon 
+    link(rel="apple-touch-icon", sizes="57x57", href="./images/favicon/apple-icon-57x57.png")
+    link(rel="apple-touch-icon", sizes="60x60", href="./images/favicon/apple-icon-60x60.png")
+    link(rel="apple-touch-icon", sizes="72x72", href="./images/favicon/apple-icon-72x72.png")
+    link(rel="apple-touch-icon", sizes="76x76", href="./images/favicon/apple-icon-76x76.png")
+    link(rel="apple-touch-icon", sizes="114x114", href="./images/favicon/apple-icon-114x114.png")
+    link(rel="apple-touch-icon", sizes="120x120", href="./images/favicon/apple-icon-120x120.png")
+    link(rel="apple-touch-icon", sizes="144x144", href="./images/favicon/apple-icon-144x144.png")
+    link(rel="apple-touch-icon", sizes="152x152", href="./images/favicon/apple-icon-152x152.png")
+    link(rel="apple-touch-icon", sizes="180x180", href="./images/favicon/apple-icon-180x180.png")
+    link(rel="icon", type="image/png", sizes="192x192", href="./images/favicon/android-icon-192x192.png")
+    link(rel="icon", type="image/png", sizes="32x32", href="./images/favicon/favicon-32x32.png")
+    link(rel="icon", type="image/png", sizes="96x96", href="./images/favicon/favicon-96x96.png")
+    link(rel="icon", type="image/png", sizes="16x16", href="./images/favicon/favicon-16x16.png")
+    link(rel="manifest", href="./images/favicon/manifest.json")
+    meta(name="msapplication-TileColor", content="#ffffff")
+    meta(name="msapplication-TileImage", content="./images/favicon/ms-icon-144x144.png")
+    meta(name="theme-color", content="#ffffff")
+
+    // XEIcon 
+    link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css")
+    link(rel='stylesheet', href="./css/index.css")
+    script(src="./js/index.js" defer)
+  body
+    main.mainContainer 
+      header.headerNavBarContainer  
+        .divLogoContainer 
+          i.xi-search.iLogoIcon 
+          i.xi-bars.iHamburgerIcon
+          .divLogo Portfolio 
+        nav.navContainer 
+          ul.ulContainer 
+            li.liHomeContainer 
+              .divPageMove Home
+            li.liAboutMeContainer 
+              .divPageMove About Me
+            li.liSkillsContainer
+              .divPageMove Skills
+            li.liPortfolioContainer
+              .divPageMove Portfolio
+            li.liContactMeContainer
+              .divPageMove Contact Me 
+      section.sectionHome 
+        article.articleHomeContainer 
+          i.xi-search.iLogoIcon 
+          h1.h1HomeTitle 책임감과 작은 일에도
+            br 
+            | 정성 가득한.
+          h2.h2HomeDescription 신입 개발자 김시원입니다.
+        button.buttonAboutMeButton About Me
+      section.sectionAboutMe 
+        h1.h1Title About Me
+        article.articleLeftContainer 
+          .divProfileContainer 
+        article.articleRightContainer 
+          h2.h2Description 🙍‍♂️ 안녕하세요! 저는 웹 개발자에 지원합니다.
+          ul.ulAboutMeContainer 
+            li 웹 자격증 공부를 하면서 코딩을 배우기 시작하여
+              br
+              | 점점 개발에 흥미가 생겨 공부를 시작하게 되었습니다.
+            li 주어진 업무를 책임지고 헤쳐나아가며,
+              br
+              | 제 힘으로만 해결하기 버거울 때에는 주변인들에게 조언을 구하겠습니다.
+            li 현재 웹 분야의 PHP, MySQL을 공부하고 있으며,
+              br
+              | 웹 분야의 전문가가 되기를 원합니다.
+            li 항상 배우고 습득하는 자세로 어제보다 나은 개발자가 되겠습니다. 👨‍💻
+      section.sectionSkills 
+        article.articleLeftContainer 
+          .divClick Click Language 
+          ul.ulSkillsContainer 
+            li 
+              img(src="./images/skills/html5.png", alt="html5")
+            li 
+              img(src="./images/skills/css3.png", alt="css3")
+            li 
+              img(src="./images/skills/javascript.png", alt="javascript")
+            li 
+              img(src="./images/skills/pug.png", alt="pug")
+            li 
+              img(src="./images/skills/sass.png", alt="sass")
+            li 
+              img(src="./images/skills/jquery.png", alt="jquery")
+            li 
+              img(src="./images/skills/react.png", alt="react")
+            li 
+              img(src="./images/skills/PHP.png", alt="PHP")
+            li 
+              img(src="./images/skills/mysql.png", alt="mysql")
+          .divSkillDescription 
+        article.articleRightContainer 
+          h1.h1Title Skills
+          ul.ulMainSkillsContainer
+            li 웹표준, 웹 접근성을 고려한 시멘틱 마크업 작업이 가능합니다.
+            li HTML과 CSS로 주어진 디자인 레이아웃에 따라 페이지를 디자인할 수 있습니다.
+            li CSS Media Query를 사용하여 반응형 웹을 만들 수 있습니다.
+            li 웹 페이지의 레이아웃과 구조적인 화면 구상 및  동적인 화면을 구상할 수 있습니다. 
+            li 기본적인 HTML, JavaScript, CSS 이해와 함께 
+              br
+              | 코드를 더욱 더 보강하여 사용하려 노력하고있습니다.
+            li 데이터베이스를 통하여 PHP로 데이터 관리를 연결시켜 사용 할 수 있습니다.
+      section.sectionPortfolio 
+        h1.h1Title Portfolio
+        article.articleSlideContainer 
+          i.xi-angle-left.iLeftIcon
+          nav.navSlideContainer 
+            ul.ulSlideContainer 
+              li.liSlideContainer 
+                img.imgThumbnail(src="./images/login.png", alt="login")
+                .divPortfolioTitleContainer
+                  .divPortfolioTitle Simple Application
+                  .divPersonNumber 1인 프로젝트
+                .divDescription php와 mysql을 이용하여 간단한 회원가입을 통해 세션을 받은 아이디만 로그인하여 메모장을 사용하며 삭제, 수정 가능한 페이지를 만들었습니다.
+                .divButtonContainer 
+                  a.aGithub(href="https://github.com/tldnjs2213/Tenth-Portfolio", target="_blank") 
+                    img(src="./images/github.png", alt="github")
+                  a.aUrl(href="http://pager.kr/~c15st06/portfolio/app(php-mysql)/", target="_blank") 
+                    i.xi-home.iHomeIcon 
+          i.xi-angle-right.iRightIcon
+      footer.footerContactMeContainer 
+        h1.h1Title Contact 
+        a.aPhoneNumber(href="tel:010-2691-7525") 010-2691-7525
+        a.aMail(href="mailto:tldnjs2213@naver.com") tldnjs2213@naver.com
+        a.aGithub(href="https://github.com/tldnjs2213", target="_blank") 
+          img(src="./images/githubWhite.png", alt="github")
+        .divFooter 본 사이트는 상업적 목적이 아닌 개인 포트폴리오 사이트로 제작되었습니다.
